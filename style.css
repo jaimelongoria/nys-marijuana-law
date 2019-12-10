@@ -1,0 +1,608 @@
+/*
+This is a good layout for a mobile-first CSS template.
+Following this flow will minimize the number of styles you need to write and will ensure you are thinking, designing and developing mobile-first.
+Most of your styles get written like standard CSS, but for your mobile presentation. Generally speaking, a good mobile presention will stretch out nicely for larger screens.
+
+Sometimes, when we stretch out to larger screens, we need to make minor tweaks for the larger devices -- you can make these tweaks in the tablet media query, or if the issue exists on desktop only, the desktop media query.
+You will find this is far easier than the opposite task of using CSS to cram your desktop experience into a mobile device.
+*/
+/*********************************************************************
+ LOADS IN A NICE RESET TO ENSURE ALL BROWSERS HAVE THE SAME BASE STYLES
+*********************************************************************/
+@import url('https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css');
+
+/*********************************************************************
+  YOUR MOBILE/BASE STYLES GO HERE
+*********************************************************************/
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    /* Sets default font-size to 16px, ensuring 1em = 16px; */
+}
+
+.container {
+    max-width: 800px;
+    padding: 25px;
+    margin: 0 auto;
+}
+
+.header_container {
+    max-width: 800px;
+    padding: 25px;
+    padding-bottom: 0px;
+    margin: 0 auto;
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.photo {
+    margin: 0 auto;
+}
+
+.img_caption {
+    font-family: 'Nunito', sans-serif;
+    font-size: 13px;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.cover-image-caption {
+    display: none;
+}
+
+h1 {
+    font-size: 45px;
+    background: -webkit-radial-gradient(circle, rgba(0, 0, 0, 1) 0%, rgba(196, 230, 241, 1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: 'Bebas Neue', cursive;
+}
+
+.dek {
+    font-family: 'Nunito', sans-serif;
+}
+
+.date_published {
+    font-family: 'Nunito', sans-serif;
+    font-size: 15px;
+}
+
+.byline {
+    font-family: 'Nunito', sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+p {
+    line-height: 1.3em;
+    font-size: 1.2em;
+    font-family: 'PT Serif', serif;
+}
+
+.dropcap {
+    float: left;
+    font-family: Georgia;
+    font-size: 75px;
+    line-height: 60px;
+    padding-top: 4px;
+    padding-right: 8px;
+    padding-left: 3px;
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    color: #74d0ed;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: #FFFFFF;
+    color: #000000;
+    font-size: .8em;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    top: 150%;
+    left: 50%;
+    margin-left: -60px;
+    border-style: solid;
+    border-width: thin;
+}
+
+.tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent black transparent;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+
+iframe {
+    width: 100%;
+    height: 120px;
+}
+
+.pullquote_tl {
+    font-size: 30px;
+    background: -webkit-linear-gradient(140deg, rgba(0, 0, 0, 1) 0%, rgba(196, 230, 241, 1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: 'Bebas Neue', cursive;
+}
+
+.pullquote_br {
+    font-size: 30px;
+    background: -webkit-linear-gradient(320deg, rgba(0, 0, 0, 1) 0%, rgba(196, 230, 241, 1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: 'Bebas Neue', cursive;
+}
+
+/* for animated scroll arrow */
+a {
+    color: white;
+    text-decoration: none;
+}
+
+.arrow_background {
+    background-color: rgb(0, 0, 0);
+}
+
+.arrow {
+    text-align: center;
+    margin: 0 auto;
+    padding-top: 50px;
+    z-index: 2;
+}
+
+.arrow_hidden {
+    display: none;
+}
+
+.bounce {
+    -moz-animation: bounce 2s infinite;
+    -webkit-animation: bounce 2s infinite;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+
+    40% {
+        transform: translateY(-30px);
+    }
+
+    60% {
+        transform: translateY(-15px);
+    }
+}
+
+/* animated scroll arrow end */
+.interactive {
+    background-color: rgb(0, 0, 0);
+    position: relative;
+}
+
+.graphic {
+    background-color: rgb(0, 0, 0);
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    padding: 10px;
+}
+
+.sticky {
+    max-width: 414px;
+    max-height: 736;
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: space-evenly;
+    z-index: 0;
+}
+
+.dot {
+    height: 5px;
+    width: 5px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 50%;
+    transition: all 0.5s ease-in-out;
+    opacity: 0;
+    margin: 1px;
+}
+
+/*the background colors will be swapped once the */
+.dot_appear {
+    opacity: 1;
+}
+
+.dot_gray {
+    background-color: gray;
+}
+
+.txt_no_conviction {
+    color: gray;
+}
+
+.dot_sell {
+    background-color: #8894BF;
+}
+
+.txt_sale {
+    color: #8894BF;
+}
+
+.dot_possession {
+    background-color: #BF9488;
+}
+
+.txt_possession {
+    color: #BF9488;
+}
+
+.dot_default {
+    background-color: #3A4C8C;
+}
+
+.txt_default {
+    color: #3A4C8C;
+}
+
+.dot_smuggle {
+    background-color: #F4AEC0;
+}
+
+.txt_smuggle {
+    color: #F4AEC0;
+}
+
+.dot_conclude {
+    background-color: #8894BF;
+}
+
+.txt_conclude {
+    color: #8894BF
+}
+
+/*
+
+.dot_scale {
+    border: 1px solid rgba(42, 179, 0, 1);
+}
+
+.dot_scale_appear {
+    border: 1px solid rgba(42, 179, 0, 1);
+}
+
+.text_scale {
+    display: none;
+    font-size: 14px;
+    color: rgba(42, 179, 0, 1);
+    margin: 0;
+    position: relative;
+    left: 5px;
+}
+
+.text_scale_appear {
+    display: inline-block;
+}
+
+*/
+.spacer {
+    width: 100%;
+    height: 1200px;
+}
+
+.final_spacer {
+    width: 100%;
+    height: 1000px;
+    background-color: #000000;
+}
+
+#text_box {
+    background-color: rgba(0, 0, 0, 0.75);
+    border-color: #ffffff;
+    color: #ffff;
+    min-height: 50px;
+    position: absolute;
+    z-index: 2;
+    padding: 10px;
+    width: 100%;
+}
+
+/**
+* After we start seeing metrics
+*/
+.metrics .dot {
+    height: 9px;
+    width: 9px;
+}
+
+.metrics .no_conviction {
+    display: none;
+}
+
+/*********************************************************************
+  YOUR TABLET/DESKTOP STYLES GO HERE
+*********************************************************************/
+@media(min-width: 681px) {
+
+    /* Any adjustments for tablets and larger go here.
+    Note these styles will be applied to anything 681px or larger -- so tablet AND desktop */
+    .header_image {
+        float: right;
+        max-height: 100vh;
+        max-width: 50vw;
+        padding-bottom: 0px;
+    }
+
+    .header_container {
+        float: left;
+        max-height: 100vh;
+        max-width: 50vw;
+        margin: 0 auto;
+        text-align: center;
+        padding-top: 100px;
+    }
+
+    .full-header {
+        padding: 0;
+        padding-bottom: 600px;
+    }
+
+    h1 {
+        font-size: 45px;
+        background: -webkit-radial-gradient(circle, rgba(0, 0, 0, 1) 0%, rgba(196, 230, 241, 1) 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-family: 'Bebas Neue', cursive;
+    }
+
+    .dek {
+        font-family: 'Nunito', sans-serif;
+        font-size: 20px;
+    }
+
+    .publish-info {
+        margin: 20px;
+        padding-bottom: 20px;
+    }
+
+    iframe {
+        float: right;
+        width: 45%;
+        height: 120px;
+    }
+
+    .photo {
+        max-width: 60%;
+        max-height: 60%;
+    }
+
+    .container {
+        max-width: 800px;
+        padding: 65px;
+        margin: 0 auto;
+    }
+
+    #text_box {
+        background-color: rgba(0, 0, 0, 0.75);
+        border-color: #ffffff;
+        color: #ffff;
+        min-height: 50px;
+        position: relative;
+        z-index: 5;
+        padding: 10px;
+        width: 50vw;
+        float: right;
+        margin: 5%;
+    }
+
+    .sticky {
+        margin: 5%;
+    }
+}
+
+/*********************************************************************
+  YOUR DESKTOP-ONLY STYLES GO HERE
+*********************************************************************/
+@media(min-width: 769px) {
+
+    /* Any adjustments for desktop and larger go here.
+    Note these styles will be applied to anything 729px or larger -- so desktop */
+    .header_image {
+        float: right;
+        max-height: 100vh;
+        max-width: 50vw;
+        padding-bottom: 0px;
+        overflow: hidden;
+    }
+
+    .header_container {
+        float: left;
+        max-height: 100vh;
+        max-width: 50vw;
+        margin: 0 auto;
+        text-align: center;
+        padding-top: 170px;
+    }
+
+    .full-header {
+        padding: 0;
+        padding-bottom: 5px;
+    }
+
+    h1 {
+        font-size: 45px;
+        background: -webkit-radial-gradient(circle, rgba(0, 0, 0, 1) 0%, rgba(196, 230, 241, 1) 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-family: 'Bebas Neue', cursive;
+    }
+
+    .dek {
+        font-family: 'Nunito', sans-serif;
+        font-size: 20px;
+    }
+
+    .img_caption {
+        font-family: 'Nunito', sans-serif;
+        font-size: 13px;
+    }
+
+    .cover-image-caption {
+        text-align: right;
+        display: flex;
+        width: 50vw;
+        margin-left: 50%
+    }
+
+    .publish-info {
+        margin: 20px;
+        padding-bottom: 20px;
+    }
+
+    .container {
+        max-width: 800px;
+        padding: 35px;
+        margin: 0 auto;
+    }
+}
+
+/*********************************************************************
+*********************************************************************/
+@media(min-width: 1025px) {
+
+    /* Any adjustments for desktop and larger go here.
+    Note these styles will be applied to anything 729px or larger -- so desktop */
+    .header_image {
+        float: right;
+        max-height: 100vh;
+        max-width: 50vw;
+        padding-bottom: 0px;
+        overflow: hidden;
+    }
+
+    .header_container {
+        float: left;
+        max-height: 100vh;
+        max-width: 50vw;
+        margin: 0 auto;
+        text-align: center;
+        padding-top: 230px;
+    }
+
+    .full-header {
+        padding: 0;
+        padding-bottom: 5px;
+    }
+
+    h1 {
+        font-size: 45px;
+        background: -webkit-radial-gradient(circle, rgba(0, 0, 0, 1) 0%, rgba(196, 230, 241, 1) 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-family: 'Bebas Neue', cursive;
+    }
+
+    .dek {
+        font-family: 'Nunito', sans-serif;
+        font-size: 20px;
+    }
+
+    .img_caption {
+        font-family: 'Nunito', sans-serif;
+        font-size: 13px;
+    }
+
+    .cover-image-caption {
+        text-align: right;
+        display: flex;
+        width: 50vw;
+        margin-left: 50%
+    }
+
+    .publish-info {
+        margin: 20px;
+        padding-bottom: 20px;
+    }
+}
+
+/*********************************************************************
+*********************************************************************/
+@media(min-width: 1441px) {
+
+    /* Any adjustments for desktop and larger go here.
+    Note these styles will be applied to anything 729px or larger -- so desktop */
+    .header_image {
+        float: right;
+        max-height: 100vh;
+        max-width: 50vw;
+        padding-bottom: 0px;
+        overflow: hidden;
+    }
+
+    .header_container {
+        float: left;
+        max-height: 100vh;
+        max-width: 50vw;
+        margin: 0 auto;
+        text-align: center;
+        padding-top: 172px;
+    }
+
+    .full-header {
+        padding: 0;
+        padding-bottom: 5px;
+    }
+
+    h1 {
+        font-size: 100px;
+        background: -webkit-radial-gradient(circle, rgba(0, 0, 0, 1) 0%, rgba(196, 230, 241, 1) 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-family: 'Bebas Neue', cursive;
+    }
+
+    .dek {
+        font-family: 'Nunito', sans-serif;
+        font-size: 25px;
+    }
+
+    .img_caption {
+        font-family: 'Nunito', sans-serif;
+        font-size: 13px;
+    }
+
+    .cover-image-caption {
+        text-align: right;
+        display: flex;
+        width: 50vw;
+        margin-left: 50%
+    }
+
+    .publish-info {
+        margin: 20px;
+        padding-bottom: 20px;
+    }
+}
