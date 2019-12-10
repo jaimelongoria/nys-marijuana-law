@@ -219,6 +219,7 @@ a {
     align-items: center;
     align-content: space-evenly;
     z-index: 0;
+    position: sticky;
 }
 
 .dot {
