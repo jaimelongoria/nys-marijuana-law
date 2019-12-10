@@ -218,7 +218,7 @@ a {
     justify-content: center;
     align-items: center;
     align-content: space-evenly;
-    z-index: 0;
+    z-index: 1;
 }
 
 .dot {
@@ -325,7 +325,7 @@ a {
     color: #ffff;
     min-height: 50px;
     position: absolute;
-    z-index: 2;
+    z-index: 100;
     padding: 10px;
     width: 100%;
 }
