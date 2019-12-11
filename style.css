@@ -336,6 +336,7 @@ a {
 .metrics .dot {
     height: 9px;
     width: 9px;
+    position: static;
 }
 
 .metrics .no_conviction {
