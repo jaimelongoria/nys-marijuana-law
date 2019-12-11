@@ -218,7 +218,7 @@ a {
     justify-content: center;
     align-items: center;
     align-content: space-evenly;
-    z-index: 1;
+    z-index: 0;
 }
 
 .dot {
@@ -336,7 +336,7 @@ a {
 .metrics .dot {
     height: 9px;
     width: 9px;
-    position: static;
+    z-index: 0;
 }
 
 .metrics .no_conviction {
@@ -412,7 +412,6 @@ a {
         color: #ffff;
         min-height: 50px;
         position: relative;
-        z-index: 5;
         padding: 10px;
         width: 50vw;
         float: right;
