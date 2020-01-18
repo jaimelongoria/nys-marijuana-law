@@ -346,6 +346,12 @@ a {
         padding-bottom: 600px;
     }
 
+    .header_space {
+        height: 150px;
+        width: 100%;
+        margin: 0 auto;
+    }
+
     h1 {
         font-size: 45px;
         background: -webkit-radial-gradient(circle, rgba(0, 0, 0, 1) 0%, rgba(196, 230, 241, 1) 100%);
@@ -427,6 +433,12 @@ a {
         padding-bottom: 5px;
     }
 
+    .header_space {
+        height: 150px;
+        width: 100%;
+        margin: 0 auto;
+    }
+
     h1 {
         font-size: 45px;
         background: -webkit-radial-gradient(circle, rgba(0, 0, 0, 1) 0%, rgba(196, 230, 241, 1) 100%);
@@ -492,6 +504,12 @@ a {
         padding-bottom: 5px;
     }
 
+    .header_space {
+        height: 150px;
+        width: 100%;
+        margin: 0 auto;
+    }
+
     h1 {
         font-size: 45px;
         background: -webkit-radial-gradient(circle, rgba(0, 0, 0, 1) 0%, rgba(196, 230, 241, 1) 100%);
@@ -549,6 +567,12 @@ a {
     .full-header {
         padding: 0;
         padding-bottom: 5px;
+    }
+
+    .header_space {
+        height: 150px;
+        width: 100%;
+        margin: 0 auto;
     }
 
     h1 {
